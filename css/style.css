@@ -1,5 +1,25 @@
+/* font-family: 'Lato', sans-serif;
+font-family: 'Archivo Black', sans-serif; */
+
 body {
     background-color: white;
+}
+
+h1 {
+    font-family: 'Archivo Black', sans-serif;
+    text-shadow: -3px 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    font-family: 'Archivo Black', sans-serif;
+}
+
+h3 {
+    font-family: 'Archivo Black', sans-serif;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
 }
 
 a:link {
@@ -21,7 +41,7 @@ a:visited {
     max-width: auto;
     margin: -8px;
     align-content: center;
-    background-color: gray;
+    /* background-color: gray; */
     padding: 25px;
 }
 
@@ -30,33 +50,37 @@ a:visited {
     z-index: 1;
     width: 100%;
     margin-left: -8px;
-    box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.7);
+    box-shadow: -10px 10px 15px 5px rgba(0, 0, 0, 0.5);
     text-align: center;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* justify-content: center; */
 }
 
 .primary-nav ul {
     list-style-type: none;
     margin: 0px;
     display: flex;
-    font-family: sans-serif;
-    align-items: center;
+    /* align-items: center; */
+    justify-content: center;
 }
 
 .primary-nav ul li {
     padding: 0.625em;
+    padding-left: 0em;
     margin-right: 1em;
-    margin-left: 1em;
+    /* margin-left: 1em; */
 }
 
-.primary-nav ul li a.vanguardPA {
-    border-color: rgb(14, 0, 204);
-    background-color: rgba(14, 0, 204, 0.3)
+.primary-nav ul li a.navItemPA {
+    /* border-color: rgb(14, 0, 204); */
+    border-color: white;
+    background-color: rgba(25, 25, 25, 1)
 }
 
-.primary-nav ul li a.vanguardPA:hover {
-    border-color: blue;
-    background-color: rgba(14, 0, 204, 0.5);
+.primary-nav ul li a.navItemPA:hover {
+    /* border-color: blue; */
+    border-color: white;
+    background-color: rgba(10, 10, 10, 1);
 }
 
 a.button:hover {
@@ -67,25 +91,25 @@ a.button {
     display: inline-block;
     padding: 0.5em 0.9375em;
     text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-decoration: none;
-    font-weight: 300;
-    font-family: 'Roboto', sans-serif;
+    /* font-weight: 300; */
+    Font-family: 'Archivo Black', sans-serif;
     font-weight: 300;
     letter-spacing: 0.06em;
     color: rgb(245, 245, 245);
-    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7);
-    background-color: rgba(0, 0, 0, 0.3);
-    text-align: center;
+    text-shadow: -3px 3px 3px rgba(0, 0, 0, 0.5);
+    background-color: rgba(40, 40, 40, 1);
+    /* text-align: center; */
 }
 
-.vanButton {
-    border: 2px solid rgb(245, 245, 245);
+.navButton {
+    border: 3px solid black;
 }
 
-.vanButton:hover {
-    border-color: rgb(14, 0, 204);
-    background-color: rgba(14, 0, 204, 0.3);
+.navButton:hover {
+    border-color: white;
+    background-color: rgba(25, 25, 25, 1);
 }
 
 .nowrap {
@@ -96,7 +120,7 @@ a.button {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: 25px;
-    background-color: lightgray;
+    background-color: rgba(0, 0, 0, 0.2);
     margin: 25px;
 }
 
@@ -104,7 +128,7 @@ a.button {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 25px;
-    background-color: lightgray;
+    background-color: transparent;
     /* margin: 25px; */
     grid-column: 1 / span 2;
 }
@@ -114,6 +138,8 @@ a.button {
     /* padding: 25px; */
     margin: 25px;
     background-color: white;
+    border: 3px solid black;
+    box-shadow: -10px 15px 15px 0px rgba(0, 0, 0, 0.5);
 }
 
 .text-container {

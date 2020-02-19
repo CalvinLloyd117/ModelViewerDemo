@@ -1,0 +1,231 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 150000,
+            "max" : [
+                27337
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 27338,
+            "max" : [
+                1.476760745048523,
+                2.8270087242126465,
+                2.3266079425811768
+            ],
+            "min" : [
+                -1.3704622983932495,
+                -2.4897103309631348,
+                -2.1563522815704346
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 27338,
+            "max" : [
+                0.9998779296875,
+                0.99969482421875,
+                0.99969482421875
+            ],
+            "min" : [
+                -0.999969482421875,
+                -0.9998779296875,
+                -0.99993896484375
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 27338,
+            "max" : [
+                0.9998905658721924,
+                0.9997051954269409,
+                0.9996009469032288,
+                1.0
+            ],
+            "min" : [
+                -0.9999991655349731,
+                -0.9998692274093628,
+                -0.9994602799415588,
+                -1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 27338,
+            "max" : [
+                1.0,
+                0.9996209999953862
+            ],
+            "min" : [
+                0.00027600000612437725,
+                0.0025280117988586426
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 300000,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 328056,
+            "byteOffset" : 300000,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 328056,
+            "byteOffset" : 628056,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 437408,
+            "byteOffset" : 956112,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 218704,
+            "byteOffset" : 1393520,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 1612224,
+            "uri" : "sheath.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "Knife-Sheath.jpg",
+            "uri" : "Knife-Sheath.jpg.jpg"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "material_0",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Knife-Sheath.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "name" : "Camera",
+            "rotation" : [
+                0.483536034822464,
+                0.33687159419059753,
+                -0.20870360732078552,
+                0.7804827094078064
+            ],
+            "translation" : [
+                7.481131553649902,
+                5.34366512298584,
+                6.5076398849487305
+            ]
+        },
+        {
+            "mesh" : 0,
+            "name" : "Knife-Sheath.001",
+            "rotation" : [
+                0.7005373239517212,
+                0.096164271235466,
+                0.0961642786860466,
+                0.7005372643470764
+            ],
+            "scale" : [
+                0.9999999403953552,
+                1.0,
+                0.9999999403953552
+            ],
+            "translation" : [
+                -0.008436212316155434,
+                -0.21889668703079224,
+                0.23181486129760742
+            ]
+        },
+        {
+            "name" : "Lamp",
+            "rotation" : [
+                0.16907575726509094,
+                0.7558802962303162,
+                -0.27217137813568115,
+                0.570947527885437
+            ],
+            "scale" : [
+                1.0,
+                1.0,
+                0.9999999403953552
+            ],
+            "translation" : [
+                4.076245307922363,
+                5.903861999511719,
+                -1.0054539442062378
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                1,
+                2,
+                0
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ]
+}

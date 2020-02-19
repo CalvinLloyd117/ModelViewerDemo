@@ -1,0 +1,153 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Title</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <nav class="primary-nav">
+        <ul class="indexNav">
+            <li><a href="index.html" class="button vanButton nowrap">Basics</a>
+            </li>
+            <li><a href="animation.html" class="button vanButton nowrap">Animation</a>
+            </li>
+            <li><a href="camera.html" class="button vanButton nowrap">Camera</a>
+            </li>
+            <li><a href="loading.html" class="button vanButton nowrap">Loading</a>
+            </li>
+            <li><a href="environment.html" class="button vanButton vanguardPA nowrap">Environment</a>
+            </li>
+            <li><a href="annotation.html" class="button vanButton nowrap">Hotspots</a>
+            </li>
+            <li><a href="ar.html" class="button vanButton nowrap">AR</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <div class="grid-parent">
+            <div class="text-container">
+                <h1>Environment and Lighting</h1>
+                <h2>Transparent Backgrounds</h2>
+                <p>Backgrounds in Model-Viewer can be set to be transparent, allowing an image to be seen behind the model.</p>
+                <p><b>NOTE:</b> This feature is only present in an unreleased development version of Model-Viewer.</p>
+            </div>
+            <div class="model-container" style="background-image:url(./images/rocky-mountains-alberta-canada.jpg); background-repeat: no-repeat; background-size:cover;">
+                <model-viewer id="testKnife" src="models/Knife/knife.gltf" interaction-prompt="auto" camera-controls auto-rotate interaction-prompt="none" exposure="0.4" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife" style="background-color: unset;">
+                </model-viewer>
+            </div>
+            <div class="text-container">
+                <h2>An Equirectangular HDR skybox-image</h2>
+                <p>HDR skybox images provide a 3D enviornment for the model to live in.</p>
+                <p>Ex. skybox-image="images\whipple_creek_regional_park_04_1k.hdr"</p>
+                <input type="radio" id="knife2" name="model2" value="knife2" checked> <label for="knife2">Knife</label><br>
+                <input type="radio" id="sheath2" name="model2" value="sheath2"> <label for="running2">Sheath</label><br>
+                <p>Additionally, HDR (and LDR) Skyboxes supply lighting to certain models where applicable.</p>
+                <h2>HDR Skyboxes vs. LDR Skyboxes</h2>
+                <p>Model-Viewer allows for two Types of Skyboxes, namely HDR and LDR Skyboxes. HDR Skyboxes provide brighter, more accurate lighting effects and reflections than LDR.</p>
+                <p></p>
+                <input type="radio" id="sbForest" name="Skybox" value="HDRForest" checked> <label for="HDRForest">HDR Forest</label><br>
+                <input type="radio" id="sbHDR" name="Skybox" value="HDR Sunrise"> <label for="HDR Sunrise">HDR Sunrise</label><br>
+                <input type="radio" id="sbLDR" name="Skybox" value="LDR Sunrise"> <label for="LDR Sunrise">LDR Sunrise</label><br>
+                <input type="radio" id="sbDisabled" name="Skybox" value="Disabled"> <label for="Disabled">Skybox Disabled</label><br>
+            </div>
+            <div class="model-container">
+                <model-viewer id="testKnife2" src="models/Knife/knife.gltf" skybox-image="images\whipple_creek_regional_park_04_1k.hdr" interaction-prompt="auto" camera-controls auto-rotate interaction-prompt="none" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
+                </model-viewer>
+                <script>
+                    (() => {
+                        const modelViewer = document.querySelector('#testKnife2');
+                        $('#knife2').click(function() {
+                            $('#testKnife2').attr('src', './models/Knife/knife.gltf')
+                        });
+                        $('#sheath2').click(function() {
+                            $('#testKnife2').attr('src', './models/Sheath/sheath.gltf')
+                        });
+                        $('#sbForest').click(function() {
+                            $('#testKnife2').attr('skybox-image', 'images/whipple_creek_regional_park_04_1k.hdr')
+                        });
+                        $('#sbDisabled').click(function() {
+                            $('#testKnife2').removeAttr('skybox-image')
+                        });
+                        $('#sbHDR').click(function() {
+                            $('#testKnife2').attr('skybox-image', 'images/spruit_sunrise_1k_HDR.hdr')
+                        });
+                        $('#sbLDR').click(function() {
+                            $('#testKnife2').attr('skybox-image', 'images/spruit_sunrise_1k_LDR.jpg')
+                        });
+                    })();
+                </script>
+            </div>
+            <div class="text-container">
+                <h2>Environment Images</h2>
+                <p>Environment-images in Model-viewer provide the lighting and reflection effects of a Skybox, without the 3D environment around the object.</p>
+                <input type="radio" id="knife3" name="model3" value="knife3" checked> <label for="knife3">Knife</label><br>
+                <input type="radio" id="sheath3" name="model3" value="sheath3"> <label for="sheath3">Sheath</label><br>
+                <h2>HDR Skyboxes vs. Environment Images</h2>
+                <p>Environment Images are defined independantly of the skybox, and background. They are also not exclusive. One Environment image may be used with a totally different Skybox.</p>
+                <h3>Environment Image Options</h3>
+                <input type="radio" id="env1" name="env" value="HDR Sunrise Environment-Image" checked> <label for="HDR Sunrise Environment-Image">HDR Sunrise Environment-Image</label><br>
+                <input type="radio" id="env2" name="env" value="HDR Forest Environment-Image"> <label for="HDR Forest Environment-Image">HDR Forest Environment-Image</label><br>
+                <input type="radio" id="envDisabled" name="env" value="envDisabled"> <label for="envDisabled">Environment-Image Disabled</label><br>
+                <h3>HDR Skybox Options</h3>
+                <input type="radio" id="sbDisabled2" name="sb2" value="sbDisabled2" checked> <label for="sbDisabled2">Skybox-Image Disabled</label><br>
+                <input type="radio" id="sb1" name="sb2" value="HDR Sunrise Skybox-Image"> <label for="HDR Sunrise Environment-Image">HDR Sunrise Skybox-Image</label><br>
+                <input type="radio" id="sb2" name="sb2" value="HDR Forest Environment-Image"> <label for="HDR Forest Environment-Image">HDR Forest Skybox-Image</label><br>
+                <p>If Environment Images are disabled/not defined, then the model will take on the lighting and reflection effects of the Skybox. However, if the instance of the model has both environment-image and skybox-image defined, then the model will
+                    take on the lighting and reflections of the environment-image, but with the 3D skybox defined by the skybox-image attribute.</p>
+            </div>
+            <div class="model-container">
+                <model-viewer id="testKnife3" src="models/Knife/knife.gltf" environment-image="images\spruit_sunrise_1k_HDR.hdr" interaction-prompt="auto" camera-controls auto-rotate interaction-prompt="none" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
+                </model-viewer>
+                <script>
+                    (() => {
+                        const modelViewer = document.querySelector('#testKnife3');
+                        $('#knife3').click(function() {
+                            $('#testKnife3').attr('src', './models/Knife/knife.gltf')
+                        });
+                        $('#sheath3').click(function() {
+                            $('#testKnife3').attr('src', './models/Sheath/sheath.gltf')
+                        });
+
+                        $('#env1').click(function() {
+                            $('#testKnife3').attr('environment-image', "images/spruit_sunrise_1k_HDR.hdr")
+                        });
+                        $('#env2').click(function() {
+                            $('#testKnife3').attr('environment-image', "images/whipple_creek_regional_park_04_1k.hdr")
+                        });
+                        $('#envDisabled').click(function() {
+                            $('#testKnife3').removeAttr('environment-image')
+                        });
+
+                        $('#sbDisabled2').click(function() {
+                            $('#testKnife3').removeAttr("skybox-image")
+                        });
+                        $('#sb1').click(function() {
+                            $('#testKnife3').attr('skybox-image', "images/spruit_sunrise_1k_HDR.hdr")
+                        });
+                        $('#sb2').click(function() {
+                            $('#testKnife3').attr('skybox-image', "images/whipple_creek_regional_park_04_1k.hdr")
+                        });
+                    })();
+                </script>
+            </div>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+    <!-- 💁 Include both scripts below to support all browsers! -->
+
+    <!-- Loads <model-viewer> for modern browsers: -->
+    <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"> -->
+    <!-- </script>  -->
+    <script type="module" src="https://modelviewer.dev/dist/model-viewer.js"></script>
+    <!-- <script type="module" src="node_modules/@google/model-viewer/dist/model-viewer.js"></script> -->
+
+    <!-- Loads <model-viewer> for old browsers like IE11: -->
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
+    </script>
+</body>
+
+</html>

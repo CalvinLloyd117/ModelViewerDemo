@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Title</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <nav class="primary-nav">
+        <ul class="indexNav">
+            <li><a href="index.html" class="button vanButton nowrap">Basics</a>
+            </li>
+            <li><a href="animation.html" class="button vanButton nowrap">Animation</a>
+            </li>
+            <li><a href="camera.html" class="button vanButton nowrap">Camera</a>
+            </li>
+            <li><a href="loading.html" class="button vanButton nowrap">Loading</a>
+            </li>
+            <li><a href="environment.html" class="button vanButton nowrap">Environment</a>
+            </li>
+            <li><a href="annotation.html" class="button vanButton nowrap">Hotspots</a>
+            </li>
+            <li><a href="ar.html" class="button vanButton nowrap vanguardPA">AR</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <div class="grid-parent">
+            <div class="text-container">
+                <h1>Augmented Reality</h1>
+                <p>Augmented Reality is on the Rise!</p>
+                <h2>What is Augmented Reality?</h2>
+                <p>In general, Augmented Reality is an interactive experience in which computer generated visuals are placed into real-world enviornments. </p>
+                <h2>Augmented Reality in Model-Viewer</h2>
+                <p>Model-Viewer supports AR by default, allowing users to place our 3D models into their enviornments at home or School, and interact with them in a unique way using Google's Scene Viewer.</p>
+                <p>This feature is supported by default, and all that is required is that the <i>ar</i> tag be included in the Model-Viewer html code.</p>
+            </div>
+            <div class="model-container">
+                <model-viewer id="testKnife2" src="models/Knife/knife.gltf" ar interaction-prompt="auto" camera-controls auto-rotate interaction-prompt="none" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
+                </model-viewer>
+            </div>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+    <!-- 💁 Include both scripts below to support all browsers! -->
+
+    <!-- Loads <model-viewer> for modern browsers: -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
+    </script>
+    <!-- <script type="module" src="https://modelviewer.dev/dist/model-viewer.js"></script> -->
+    <!-- <script type="module" src="node_modules/@google/model-viewer/dist/model-viewer.js"></script> -->
+
+    <!-- Loads <model-viewer> for old browsers like IE11: -->
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
+    </script>
+</body>
+
+</html>

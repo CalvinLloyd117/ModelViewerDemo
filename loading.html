@@ -48,6 +48,7 @@
                 <h1>Custom Loading</h1>
                 <p>Models can also be given extra graphics and buttons which prompt interaction.</p>
                 <p>These act as css button style elements can can be styled however we want.</p>
+                <p>Note: This functionality does not seem to work in MS Edge.</p>
             </div>
             <div class="model-container">
                 <!-- use unique asset to ensure lazy loading -->
@@ -63,7 +64,7 @@
             <div class="model-container">
                 <!-- use unique asset to ensure lazy loading -->
                 <model-viewer id="toggle-poster" camera-controls reveal="interaction" poster="./models/Sheath/Sheath-poster.jpg" interaction-policy="allow-when-focused" src="./models/Sheath/sheath.gltf" alt="A 3D model of a Blackfoot sheath">
-                    <div class="button-load">Load 3D Model</div>
+                    <!-- <div class="button-load">Load 3D Model</div> -->
                 </model-viewer>
                 <script>
                     const posters = ['Sheath-poster.jpg', 'Sheath-poster2.jpg', 'Sheath-poster3.jpg'];
@@ -75,17 +76,30 @@
             </div>
         </div>
     </div>
-    <script src="js/scripts.js"></script>
     <!-- 💁 Include both scripts below to support all browsers! -->
-
     <!-- Loads <model-viewer> for modern browsers: -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
     </script>
     <!-- <script type="module" src="https://modelviewer.dev/dist/model-viewer.js"></script> -->
-    <!-- <script type="module" src="node_modules/@google/model-viewer/dist/model-viewer.js"></script> -->
-
     <!-- Loads <model-viewer> for old browsers like IE11: -->
-    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+
+    <!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
+    <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
+
+    <!-- 💁 OPTIONAL: Fullscreen polyfill is required for experimental AR features in Canary -->
+    <script src="https://unpkg.com/fullscreen-polyfill@1.0.2/dist/fullscreen.polyfill.js"></script>
+
+    <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script src="https://unpkg.com/focus-visible@5.0.1/dist/focus-visible.js" defer></script>
+
+    <!-- 💁 OPTIONAL: Include prismatic.js for Magic Leap support -->
+    <script src="https://unpkg.com/@magicleap/prismatic@0.18.2/prismatic.min.js"></script>
     </script>
 </body>
 

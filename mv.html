@@ -6,13 +6,14 @@
     <title>Website Title</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Lato:400&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <nav class="primary-nav">
         <ul class="indexNav">
-            <li><a href="index.html" class="button navButton nowrap">Basics</a>
+            <li><a href="index.html" class="button navButton nowrap navItemPA">Basics</a>
             </li>
             <li><a href="animation.html" class="button navButton nowrap">Animation</a>
             </li>
@@ -24,28 +25,21 @@
             </li>
             <li><a href="annotation.html" class="button navButton nowrap">Hotspots</a>
             </li>
-            <li><a href="ar.html" class="button navButton nowrap navItemPA">AR</a>
+            <li><a href="ar.html" class="button navButton nowrap">AR</a>
             </li>
             <li><a href="compatibility.html" class="button navButton nowrap">Performance and Compatability</a>
             </li>
         </ul>
     </nav>
     <div class="wrapper">
-        <div class="grid-parent">
-            <div class="text-container">
-                <h1>Augmented Reality</h1>
-                <p>Augmented Reality is on the Rise!</p>
-                <h2>What is Augmented Reality?</h2>
-                <p>In general, Augmented Reality is an interactive experience in which computer generated visuals are placed into real-world enviornments. </p>
-                <h2>Augmented Reality in Model-Viewer</h2>
-                <p>Model-Viewer supports AR by default, allowing users to place our 3D models into their enviornments at home or School, and interact with them in a unique way using Google's Scene Viewer.</p>
-                <p>This feature is supported by default, and all that is required is that the <i>ar</i> tag be included in the Model-Viewer html code.</p>
-                <p>Unfortunately, I cannot seem to get the AR working for our models.</p>
-            </div>
-            <div class="model-container">
-                <model-viewer id="testKnife2" src="models/Pipe/pipe.gltf" ar ar-scale="auto" interaction-prompt="auto" camera-controls auto-rotate interaction-prompt="none" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
-                </model-viewer>
-            </div>
+        <div class="model-container">
+            <model-viewer id="testKnife2" src="models/Sheath/sheath.gltf" exposure="0.5" interaction-prompt="auto" camera-controls auto-rotate interaction-prompt="none" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
+            </model-viewer>
+            <script>
+                (() => {
+
+                })();
+            </script>
         </div>
     </div>
     <script src="js/scripts.js"></script>

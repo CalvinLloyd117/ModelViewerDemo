@@ -147,6 +147,8 @@ a.button {
 .model-container {
     height: 85vh;
     /* padding: 25px; */
+    min-height: 20vh;
+    max-height: 85vh;
     margin: 25px;
     background-color: white;
     border: 3px solid black;
@@ -156,7 +158,7 @@ a.button {
 .compat-container {
     /* padding: 25px; */
     position: relative;
-    height: 85vh;
+    min-height: 750px;
     margin: 25px;
     background-color: white;
     background-image: url("../images/CompatabilityChart.png");
@@ -339,4 +341,43 @@ button[slot='hotspot-loop']:hover {
     transform: translate3d(-50%, -50%, 0);
     z-index: 100;
     border: 2px solid black;
+}
+
+.model--div {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width:1740px) {
+    a.button {
+        font-size: 0.8em;
+    }
+    .grid-parent {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        margin: 20px;
+    }
+}
+
+@media screen and (max-width:1265px) {
+    a.button {
+        font-size: 0.8em;
+    }
+    .grid-parent {
+        grid-template-columns: 1fr;
+    }
+    .grid-models {
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        grid-column: 1 / 1;
+    }
+}
+
+@media screen and (max-width:560px) {
+    .model-container {
+        height: 50vh
+    }
 }

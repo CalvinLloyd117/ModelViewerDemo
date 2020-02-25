@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Title</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Lato:400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <nav class="primary-nav">
+        <ul class="indexNav">
+            <li><a href="index.html" class="button navButton nowrap navItemPA">Basics</a>
+            </li>
+            <li><a href="animation.html" class="button navButton nowrap">Animation</a>
+            </li>
+            <li><a href="camera.html" class="button navButton nowrap">Camera</a>
+            </li>
+            <li><a href="loading.html" class="button navButton nowrap">Loading</a>
+            </li>
+            <li><a href="environment.html" class="button navButton nowrap">Environment</a>
+            </li>
+            <li><a href="annotation.html" class="button navButton nowrap">Hotspots</a>
+            </li>
+            <li><a href="ar.html" class="button navButton nowrap">AR</a>
+            </li>
+            <li><a href="compatibility.html" class="button navButton nowrap">Performance and Compatability</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <div class="model-container" id="Place__Model">
+            <div id="3d_model" class="model--div"></div>
+        </div>
+    </div>
+    <script src="js/three.min.js"></script>
+    <script src="js/GLTFLoader.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/WebGL.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

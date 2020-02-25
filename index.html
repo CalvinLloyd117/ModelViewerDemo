@@ -6,6 +6,7 @@
     <title>Website Title</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Lato:400&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -26,20 +27,19 @@
             </li>
             <li><a href="ar.html" class="button navButton nowrap">AR</a>
             </li>
-            <!-- <li><a href="more.html" class="button navButton nowrap">More Info</a>
-            </li> -->
+            <li><a href="compatibility.html" class="button navButton nowrap">Performance and Compatability</a>
+            </li>
         </ul>
     </nav>
     <div class="wrapper">
         <div class="grid-parent">
             <div class="text-container">
                 <h1>What is Model-Viewer?</h1>
-                <p>Model-Viewer is a light-weight 3D modeling framework built on the three.js suite. This framework takes alot of the backend workload out of the equation, allowing for self contained models which do not require the same care and backend
+                <p>Model-Viewer is a light-weight 3D modeling framework built on the three.js suite. This framework takes alot of the backend workload out of the equation, allowing for self contained models which do not require the same care and meticulous
                     hassle that comes from using three.js.</p>
                 <p>What took me nearly 250 lines of code in Three.js to render a simple knife, can be done with ease in Model-Viewer. It is literally as easy as including the model-viewer tag and the src of a .gltf model. </p>
                 <p>Practically every 3D modelling functionality that I think we could ever need from three.js is already included in Model-Viewer, but without the need for hard coding a back-end platform.</p>
                 <p>Model-Viewer also removes some of the three.js limitations (such as a hard cap on the number of scenes that can be rendered at a time) while incuring seemingly no additional performance cost.</p>
-                <h1></h1>
                 <h1>User Experience</h1>
                 <p>Model-Viewer includes some basic user experience functionality which will help users to interact with 3D models on the web.</p>
                 <h3>Auto-Rotate</h3>
@@ -76,12 +76,12 @@
             <div class="text-container">
                 <h1>Dynamic Models</h1>
                 <p>Models can be changed dynamically, using some basic Javascript/jQuery.</p>
-                <input type="radio" id="knife" name="model" value="knife" checked> <label for="knife">Knife</label><br>
-                <input type="radio" id="sheath" name="model" value="sheath"> <label for="running">Sheath</label><br>
+                <input type="radio" id="knife" name="model" value="knife" checked> <label for="knife">Pouch</label><br>
+                <input type="radio" id="sheath" name="model" value="sheath"> <label for="running">Red-Pipe</label><br>
 
                 <h1>Model Exposure</h1>
                 <p>Model-Viewer includes an exposure tag, which changes the "lighting" of the object. This tag accepts a value from 0-1 and can be used to fix certain washed out models.</p>
-                <p>This tag however does not control the actual lighting of the image. Lighting in .gltf and .glb seems to be baked into the model itself and cannot be set from within this framework.</p>
+                <p>This tag however does not control the actual lighting of the image. Lighting within this framework can be changed through HDR enviornment-images.</p>
                 <input type="radio" id="expHigh" name="exposure" value="High" checked> <label for="High">High Exposure</label><br>
                 <input type="radio" id="expLow" name="exposure" value="Low"> <label for="Low">Low Exposure</label><br>
                 <h1>Shadows (Intensity and Softness)</h1>
@@ -90,26 +90,25 @@
                 <input type="radio" id="LIntensity" name="intensity" value="lowIn" checked> <label for="LIntensity">Low</label><br>
                 <input type="radio" id="HIntensity" name="intensity" value="highIn"> <label for="HIntensity">High</label><br>
                 <p><b>Shadow Softness:</b> Controls the softness of the edge of the shadows.</p>
-                <p>NOTE: Softer shadows render more quickly.</p>
+                <p><b>NOTE:</b> Softer shadows render more quickly.</p>
                 <input type="radio" id="softS" name="softness" value="lowSoft" checked> <label for="softS">Softer</label><br>
                 <input type="radio" id="hardS" name="softness" value="highSoft"> <label for="hardS">Harder</label><br>
                 <h1>Other Model-Viewer Attributes</h1>
-                <p>There are several other Attributes (tags) that Model-Viewer has which can be accessed using jQuery. While Model-Viewer does not specifically advertise this as a feature, it is something we can take adnavtage of, and leverage to our needs.</p>
-                <p>Note: Certain attributes cannot be changed dynamically using jQuery, such as animations. However, that can be changed dynamically using other techniques. The ability to change tag values dynamically seems to depend on whether the tag is
-                    needed during run-time, or before run-time.</p>
+                <p>There are many other Attributes (tags) that Model-Viewer has which can be accessed using jQuery. While Model-Viewer does not specifically advertise this as a feature, it is something we can take advantage of, and leverage to our needs.</p>
+                <p><b>Note:</b> Not all attribute tages can be changed using Javascript (such as Animations).</p>
                 <p>A complete list of Model-Viewer Attributes can be found <a href="https://modelviewer.dev/" target="_blank">here</a>.</p>
             </div>
             <div class="model-container">
-                <model-viewer id="testKnife" class="default" src="./models/Knife/knife.gltf" auto-rotate autoplay camera-controls shadow-intensity="3" exposure="1" shadow-softness="0.01" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
+                <model-viewer id="testKnife" class="default" src="./models/Pouch/pouch.gltf" auto-rotate autoplay camera-controls shadow-intensity="3" exposure="1" shadow-softness="0.01" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
                 </model-viewer>
                 <script>
                     (() => {
                         const modelViewer = document.querySelector('#testKnife');
                         $('#knife').click(function() {
-                            $('#testKnife').attr('src', './models/Knife/knife.gltf')
+                            $('#testKnife').attr('src', './models/Pouch/pouch.gltf')
                         });
                         $('#sheath').click(function() {
-                            $('#testKnife').attr('src', './models/Sheath/sheath.gltf')
+                            $('#testKnife').attr('src', './models/RedPipe/red-pipe.gltf')
                         });
                         $('#LIntensity').click(function() {
                             $('#testKnife').attr('shadow-intensity', '3')

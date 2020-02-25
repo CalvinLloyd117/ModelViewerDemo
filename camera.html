@@ -6,6 +6,7 @@
     <title>Website Title</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Lato:400&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -26,8 +27,8 @@
             </li>
             <li><a href="ar.html" class="button navButton nowrap">AR</a>
             </li>
-            <!-- <li><a href="more.html" class="button navButton nowrap">More Info</a>
-            </li> -->
+            <li><a href="compatibility.html" class="button navButton nowrap">Performance and Compatability</a>
+            </li>
         </ul>
     </nav>
     <div class="wrapper">
@@ -46,11 +47,29 @@
                 <input type="radio" id="targetDefault" name="target" value="default" checked> <label for="default">Default</label><br>
                 <input type="radio" id="targetTop" name="target" value="above"> <label for="above">Above</label><br>
                 <p>Ex. Above is set to $('#cameraSheath1').attr('camera-target', '0m 3m 0m'), which sets the camera target to be 3m above the model.</p>
+                <p>It is also possible to sync the camera-target to the cursor location within the Model's display box. However, this is something not built in to Model-Viewer, but rather something I have been tinkering with. I was not happy with the results,
+                    so I have decided not to showcase it. But it is possible to dynamically change the camera target in order to zoom into different locations on the model.</p>
             </div>
-            <div class="model-container">
-                <model-viewer id="cameraSheath1" src="models/Sheath/sheath.gltf" camera-controls camera-orbit="0deg 0deg 10m" interaction-prompt="none" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
+            <div class="model-container" id="testDiv">
+                <model-viewer id="cameraSheath1" src="models/Sheath/sheath.gltf" camera-controls camera-target="auto auto auto" camera-orbit="auto 0deg 10m" interaction-prompt="none" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
                 </model-viewer>
                 <script>
+                    // (() => {
+                    //     $('#cameraSheath1').click(function(e) {
+                    //         var elm = $(this);
+                    //         //var xPos = e.pageX - elm.offset().left;
+                    //         //var yPos = e.pageY - elm.offset().top;
+                    //         var xPos = (e.pageX - elm.offset().left) / elm.width();
+                    //         var yPos = (e.pageY - elm.offset().top) / elm.height();
+                    //         console.log(xPos, yPos);
+                    //         var xTar = (0.5 - xPos) + "m";
+                    //         var yTar = (0.5 - yPos) + "m";
+                    //         var Tar = xTar + " " + yTar + " " + "auto"
+                    //             //console.log(xTar, yTar);
+                    //         $('#cameraSheath1').attr('camera-target', Tar)
+                    //         console.log("set")
+                    //     });
+                    // })();
                     (() => {
                         const modelViewer = document.querySelector('#cameraSheath1');
                         $('#orbitTop').click(function() {
@@ -77,8 +96,8 @@
                 <input type="radio" id="sheath" name="model" value="sheath"> <label for="running">Sheath</label><br>
             </div>
             <div class="model-container">
-                <model-viewer id="testKnife" class="default" src="./models/Knife/knife.gltf" camera-controls interaction-prompt="none" camera-orbit="calc(-1.5rad + env(window-scroll-y) * 7rad) calc(0deg + env(window-scroll-y) * 180deg) calc(10m - env(window-scroll-y) * 6.5m)"
-                    shadow-intensity="3" exposure="0.4" shadow-softness="0.01" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
+                <model-viewer id="testKnife" class="default" src="./models/Pipe/pipe.gltf" camera-controls interaction-prompt="none" camera-orbit="calc(-1.5rad + env(window-scroll-y) * 7rad) calc(0deg + env(window-scroll-y) * 180deg) calc(10m - env(window-scroll-y) * 6.5m)"
+                    shadow-intensity="3" exposure="0.9" shadow-softness="0.01" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
                 </model-viewer>
                 <script>
                     (() => {

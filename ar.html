@@ -26,8 +26,8 @@
             </li>
             <li><a href="ar.html" class="button navButton nowrap navItemPA">AR</a>
             </li>
-            <!-- <li><a href="more.html" class="button navButton nowrap">More Info</a>
-            </li> -->
+            <li><a href="compatibility.html" class="button navButton nowrap">Performance and Compatability</a>
+            </li>
         </ul>
     </nav>
     <div class="wrapper">
@@ -40,9 +40,10 @@
                 <h2>Augmented Reality in Model-Viewer</h2>
                 <p>Model-Viewer supports AR by default, allowing users to place our 3D models into their enviornments at home or School, and interact with them in a unique way using Google's Scene Viewer.</p>
                 <p>This feature is supported by default, and all that is required is that the <i>ar</i> tag be included in the Model-Viewer html code.</p>
+                <p>Unfortunately, I cannot seem to get the AR working for our models.</p>
             </div>
             <div class="model-container">
-                <model-viewer id="testKnife2" src="models/Knife/knife.gltf" ar interaction-prompt="auto" camera-controls auto-rotate interaction-prompt="none" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
+                <model-viewer id="testKnife2" src="models/Pipe/pipe.gltf" ar ar-scale="auto" interaction-prompt="auto" camera-controls auto-rotate interaction-prompt="none" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
                 </model-viewer>
             </div>
         </div>
@@ -51,9 +52,10 @@
     <!-- 💁 Include both scripts below to support all browsers! -->
 
     <!-- Loads <model-viewer> for modern browsers: -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
+    <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"> -->
+
     </script>
-    <!-- <script type="module" src="https://modelviewer.dev/dist/model-viewer.js"></script> -->
+    <script type="module" src="https://modelviewer.dev/dist/model-viewer.js"></script>
     <!-- <script type="module" src="node_modules/@google/model-viewer/dist/model-viewer.js"></script> -->
 
     <!-- Loads <model-viewer> for old browsers like IE11: -->

@@ -39,7 +39,7 @@
                 <p>In the case of the bee, there is only one animation present on the model.</p>
             </div>
             <div class="model-container">
-                <model-viewer src="./models/Bee/bee.glb" auto-rotate autoplay camera-controls exposure="0.2" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
+                <model-viewer src="./models/Bee/bee.glb" autoplay auto-rotate camera-controls exposure="0.2" interaction-prompt="none" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
                 </model-viewer>
             </div>
             <div class="text-container">
@@ -54,7 +54,7 @@
             </div>
             <div class="text-container">
                 <h1>Cycling Animations</h1>
-                <p>Animations can be cycled through aswell. In this case, the Venus Flytrap has two animations: <i>idle</i> and <i>attack</i> which can be cycled through on a timer.</p>
+                <p>Animations can be cycled through as well. In this case, the Venus Flytrap has two animations: <i>idle</i> and <i>attack</i> which can be cycled through on a timer.</p>
                 <p>There are timing issues when attempting to cycle through more than 2 animations. I do think it would be possible to do, I just decided to move on after testing the animation cycling on the Dragon (which has 3 animations).</p>
             </div>
             <div class="model-container">
@@ -104,6 +104,35 @@
                         });
                     })();
                 </script>
+            </div>
+            <div class="text-container">
+                <h1>Play Animations on Interaction (Work in Progress)</h1>
+                <p>I discovered a way to play animations when the user interacts with a model. Something similar to this functionality might be usable as pseudo-physics. For example, interacting with a model may cause movement in the tassels on the pouch
+                    for instance. </p>
+                <p>Disclaimer: this is simply an experiment by me, so actual results may vary. </p>
+            </div>
+            <div class="model-container">
+                <model-viewer src="./models/Bee/bee.glb" id="bee" auto-rotate camera-controls exposure="0.2" interaction-prompt="none" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
+                    <script>
+                        (() => {
+                            const modelViewer = document.querySelector('#bee');
+                            $('#bee').mousedown(function() {
+                                down = true;
+                            }).mouseup(function() {
+                                down = false;
+                            });
+                            $("#bee").on("camera-change", function() {
+                                setTimeout(function() {
+                                    modelViewer.pause();
+                                }, 0);
+                                // modelViewer.play();
+                                if (down) {
+                                    modelViewer.play();
+                                }
+                            });
+                        })();
+                    </script>
+                </model-viewer>
             </div>
         </div>
     </div>

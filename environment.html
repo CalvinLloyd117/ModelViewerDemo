@@ -36,14 +36,13 @@
                 <h1>Environment and Lighting</h1>
                 <h2>Transparent Backgrounds</h2>
                 <p>Backgrounds in Model-Viewer can be set to be transparent, allowing an image to be seen behind the model.</p>
-                <p><b>NOTE:</b> This feature is only present in an unreleased development version of Model-Viewer.</p>
             </div>
             <div class="model-container" style="background-image:url(./images/rocky-mountains-alberta-canada.jpg); background-repeat: no-repeat; background-size:cover;">
                 <model-viewer id="testKnife" src="models/StonePipe/stone-pipe.gltf" interaction-prompt="auto" camera-controls auto-rotate interaction-prompt="none" exposure="0.4" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife" style="background-color: unset;">
                 </model-viewer>
             </div>
             <div class="text-container">
-                <p>We are able to set the background of a model to a .gif aswell.</p>
+                <p>We are able to set the background of a model to a .gif as well.</p>
             </div>
             <div class="model-container" style="background-image:url(./images/sunset.gif); background-repeat: no-repeat; background-size:cover;">
                 <model-viewer id="testKnife" src="models/Pouch/pouch.gltf" interaction-prompt="auto" camera-controls auto-rotate interaction-prompt="none" exposure="0.4" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife" style="background-color: unset;">
@@ -57,7 +56,7 @@
                 <input type="radio" id="sheath2" name="model2" value="sheath2"> <label for="running2">Sheath</label><br>
                 <p>Additionally, HDR (and LDR) Skyboxes supply lighting to certain models where applicable.</p>
                 <h2>HDR Skyboxes vs. LDR Skyboxes</h2>
-                <p>Model-Viewer allows for two Types of Skyboxes, namely HDR and LDR Skyboxes. HDR Skyboxes provide brighter, more accurate lighting effects and reflections than LDR.</p>
+                <p>Model-Viewer allows for two types of skyboxes, namely HDR and LDR skyboxes. HDR skyboxes provide brighter, more accurate lighting effects and reflections than LDR.</p>
                 <p></p>
                 <input type="radio" id="sbForest" name="Skybox" value="HDRForest" checked> <label for="HDRForest">HDR Forest</label><br>
                 <input type="radio" id="sbHDR" name="Skybox" value="HDR Sunrise"> <label for="HDR Sunrise">HDR Sunrise</label><br>
@@ -92,13 +91,13 @@
                 </script>
             </div>
             <div class="text-container">
-                <h2>Environment Images</h2>
+                <h2>Environment-Images</h2>
                 <p>Environment-images in Model-viewer provide the lighting and reflection effects of a Skybox, without the 3D environment around the object.</p>
                 <input type="radio" id="knife3" name="model3" value="knife3" checked> <label for="knife3">Knife</label><br>
                 <input type="radio" id="sheath3" name="model3" value="sheath3"> <label for="sheath3">Sheath</label><br>
-                <h2>HDR Skyboxes vs. Environment Images</h2>
-                <p>Environment Images are defined independantly of the skybox, and background. They are also not exclusive. One Environment image may be used with a totally different Skybox.</p>
-                <h3>Environment Image Options</h3>
+                <h2>HDR Skyboxes vs. Environment-Images</h2>
+                <p>Environment-images are defined independently of the skybox and background. They are also not exclusive. One environment-image may be used with a totally different skybox.</p>
+                <h3>Environment-Image Options</h3>
                 <input type="radio" id="env1" name="env" value="HDR Sunrise Environment-Image" checked> <label for="HDR Sunrise Environment-Image">HDR Sunrise Environment-Image</label><br>
                 <input type="radio" id="env2" name="env" value="HDR Forest Environment-Image"> <label for="HDR Forest Environment-Image">HDR Forest Environment-Image</label><br>
                 <input type="radio" id="envDisabled" name="env" value="envDisabled"> <label for="envDisabled">Environment-Image Disabled</label><br>
@@ -106,8 +105,8 @@
                 <input type="radio" id="sbDisabled2" name="sb2" value="sbDisabled2" checked> <label for="sbDisabled2">Skybox-Image Disabled</label><br>
                 <input type="radio" id="sb1" name="sb2" value="HDR Sunrise Skybox-Image"> <label for="HDR Sunrise Environment-Image">HDR Sunrise Skybox-Image</label><br>
                 <input type="radio" id="sb2" name="sb2" value="HDR Forest Environment-Image"> <label for="HDR Forest Environment-Image">HDR Forest Skybox-Image</label><br>
-                <p>If Environment Images are disabled/not defined, then the model will take on the lighting and reflection effects of the Skybox. However, if the instance of the model has both environment-image and skybox-image defined, then the model will
-                    take on the lighting and reflections of the environment-image, but with the 3D skybox defined by the skybox-image attribute.</p>
+                <p>If environment-images are disabled/not defined, the model will take on the lighting and reflection effects of the Skybox. However, if the instance of the model has both environment-image and skybox-image defined, then the model will take
+                    on the lighting and reflections of the environment-image, but with the 3D skybox defined by the skybox-image attribute.</p>
             </div>
             <div class="model-container">
                 <model-viewer id="testKnife3" src="models/Knife/knife.gltf" environment-image="images\spruit_sunrise_1k_HDR.hdr" interaction-prompt="auto" camera-controls auto-rotate interaction-prompt="none" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">

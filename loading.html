@@ -47,7 +47,7 @@
             <div class="text-container">
                 <h1>Custom Loading</h1>
                 <p>Models can also be given extra graphics and buttons which prompt interaction.</p>
-                <p>These act as css button style elements can can be styled however we want.</p>
+                <p>These act as css button style elements that can be styled however we want.</p>
                 <p>Note: This functionality does not seem to work in MS Edge.</p>
             </div>
             <div class="model-container">
@@ -59,11 +59,11 @@
             </div>
             <div class="text-container">
                 <h1>Poster Cycling</h1>
-                <p>If multiple posters of a model are avalible, they can be cycled through using JavaScript. This can catch the eyes of users, hopefully helping them realize that there is a 3D model availible for interaction, and not just an image.</p>
+                <p>If multiple posters of a model are available, they can be cycled through using JavaScript. This can catch the eyes of users, hopefully helping them realize that there is a 3D model availible for interaction, and not just an image.</p>
             </div>
             <div class="model-container">
                 <!-- use unique asset to ensure lazy loading -->
-                <model-viewer id="toggle-poster" camera-controls reveal="interaction" poster="./models/Sheath/Sheath-poster.jpg" interaction-policy="allow-when-focused" src="./models/Sheath/sheath.gltf" alt="A 3D model of a Blackfoot sheath">
+                <model-viewer id="toggle-poster" camera-controls preload reveal="interaction" interaction-prompt="auto" poster="./models/Sheath/Sheath-poster.jpg" interaction-policy="allow-when-focused" src="./models/Sheath/sheath.gltf" alt="A 3D model of a Blackfoot sheath">
                     <!-- <div class="button-load">Load 3D Model</div> -->
                 </model-viewer>
                 <script>

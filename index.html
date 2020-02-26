@@ -35,22 +35,25 @@
         <div class="grid-parent">
             <div class="text-container">
                 <h1>What is Model-Viewer?</h1>
-                <p>Model-Viewer is a light-weight 3D modeling framework built on the three.js suite. This framework takes alot of the backend workload out of the equation, allowing for self contained models which do not require the same care and meticulous
+                <p>Model-Viewer is a light-weight 3D modeling framework built on the three.js suite. This framework takes alot of the backend workload out of the equation, allowing for self-contained models which do not require the same care and meticulous
                     hassle that comes from using three.js.</p>
-                <p>What took me nearly 100 lines of code in Three.js to render a simple knife, can be done with ease in Model-Viewer. It is literally as easy as including the model-viewer tag and the src of a .gltf model. </p>
-                <p>Practically every 3D modelling functionality that I think we could ever need from three.js is already included in Model-Viewer, but without the need for hard coding a back-end platform.</p>
-                <p>Model-Viewer also removes some of the three.js limitations (such as a hard cap on the number of scenes that can be rendered at a time) while incuring seemingly no additional performance cost.</p>
+                <p>What took me nearly 100 lines of code in three.js to render a simple knife, can be done with ease in Model-Viewer. It is literally as easy as including the model-viewer tag and the src of a .gltf model in order to achieve basic functionality.
+                </p>
+                <p>Practically every 3D modelling functionality that I think we could ever need from three.js is already included in Model-Viewer, but without the need for hard coding a back-end platform. </p>
+                <p>All of Model-Viewer's functionality and features are sure to improve in the future. This web component is still in development, and during my time exploring it, there have been many improvements that I was able to witness firsthand and
+                    compare during my research. The component already works great, and it's only getting better!</p>
+                <p>Model-Viewer also removes some of the three.js limitations (such as a hard cap on the number of scenes that can be rendered at a time) while incurring seemingly no additional performance cost.</p>
                 <h1>User Experience</h1>
-                <p>Model-Viewer includes some basic user experience functionality which will help users to interact with 3D models on the web.</p>
+                <p>Model-Viewer includes some basic user experience functionality which will help users interact with 3D models on the web.</p>
                 <h3>Auto-Rotate</h3>
-                <p>Model-Viewer allows users to include the <i>auto-rotate</i> tag which slowly rotates the model</p>
+                <p>Model-Viewer allows users to include the <i>auto-rotate</i> tag which slowly rotates the model.</p>
                 <input type="radio" id="rotateOn" name="autorotate" value="on" checked> <label for="on">On</label><br>
                 <input type="radio" id="rotateOff" name="autorotate" value="off"> <label for="off">Off</label><br>
                 <h3>Interaction and <i>Wiggle</i></h3>
                 <p>A <i><b>wiggle</b></i> prompt can be enabled which indicates to users that the model is 3D and can be interacted with. The time between the wiggle prompts can also be changed.</p>
                 <input type="radio" id="wiggleOn" name="wiggle" value="on" checked> <label for="on">On</label><br>
                 <input type="radio" id="wiggleOff" name="wiggle" value="off"> <label for="off">Off</label><br>
-                <p><b>Interaction Policies</b> can be set which prevent accidentally zooming into a model rather than scroll down the webpage.</p>
+                <p><b>Interaction Policies</b> can be set which prevent accidentally zooming into a model rather than scroll down the webpage. So long as the model is not in focus, accidental interaction can be avoided.</p>
             </div>
             <div class="model-container">
                 <model-viewer id="testKnife2" src="models/StonePipe/stone-pipe.gltf" interaction-prompt="auto" camera-controls auto-rotate interaction-prompt="none" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
@@ -94,12 +97,12 @@
                 <input type="radio" id="softS" name="softness" value="lowSoft" checked> <label for="softS">Softer</label><br>
                 <input type="radio" id="hardS" name="softness" value="highSoft"> <label for="hardS">Harder</label><br>
                 <h1>Other Model-Viewer Attributes</h1>
-                <p>There are many other Attributes (tags) that Model-Viewer has which can be accessed using jQuery. While Model-Viewer does not specifically advertise this as a feature, it is something we can take advantage of, and leverage to our needs.</p>
+                <p>There are many other attributes (tags) that Model-Viewer has which can be accessed using jQuery. While Model-Viewer does not specifically advertise this as a feature, it is something we can take advantage of, and leverage to our needs.</p>
                 <p><b>Note:</b> Not all attribute tages can be changed using Javascript (such as Animations).</p>
-                <p>A complete list of Model-Viewer Attributes can be found <a href="https://modelviewer.dev/" target="_blank">here</a>.</p>
+                <p>A complete list of Model-Viewer attributes can be found <a href="https://modelviewer.dev/" target="_blank">here</a>.</p>
             </div>
             <div class="model-container">
-                <model-viewer id="testKnife" class="default" src="./models/Pouch/pouch.gltf" auto-rotate autoplay camera-controls shadow-intensity="3" exposure="1" shadow-softness="0.01" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
+                <model-viewer id="testKnife" class="default" src="./models/Pouch/pouch.gltf" auto-rotate autoplay camera-controls shadow-intensity="3" exposure="1" shadow-softness="0.9" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
                 </model-viewer>
                 <script>
                     (() => {
@@ -117,10 +120,10 @@
                             $('#testKnife').attr('shadow-intensity', '7')
                         });
                         $('#softS').click(function() {
-                            $('#testKnife').attr('shadow-softness', '0.01')
+                            $('#testKnife').attr('shadow-softness', '0.9')
                         });
                         $('#hardS').click(function() {
-                            $('#testKnife').attr('shadow-softness', '1')
+                            $('#testKnife').attr('shadow-softness', '0.1')
                         });
                         $('#expHigh').click(function() {
                             $('#testKnife').attr('exposure', '1')

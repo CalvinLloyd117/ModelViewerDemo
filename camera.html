@@ -36,6 +36,8 @@
             <div class="text-container">
                 <h1>Camera Control</h1>
                 <p>In addition to being able to enable camera control so that users can interact with the objects, we also have access to several basic positioning methods.</p>
+                <p>An interesting note about the camera and how it relates to models: When you are "turning the model" you are actually rotating the camera around the model, and not rotating the model itself. However, the auto-rotate tag actually causes
+                    the model itself to rotate while the camera stays still. This becomes quite apparent in an HDR skybox.</p>
                 <h3>Initial Camera Angle</h3>
                 <p>Camera angles can be initialized manually, and manipulated using button presses.</p>
                 <input type="radio" id="orbitTop" name="orbit" value="top" checked> <label for="top">Top</label><br>

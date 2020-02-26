@@ -25,7 +25,7 @@
             </li>
             <li><a href="ar.html" class="button navButton nowrap">AR</a>
             </li>
-            <li><a href="compatibility.html" class="button navButton nowrap navItemPA">Performance and Compatability</a>
+            <li><a href="compatibility.html" class="button navButton nowrap navItemPA">Performance and Compatibility</a>
             </li>
         </ul>
     </nav>
@@ -33,21 +33,21 @@
         <div class="grid-parent">
             <div class="text-container">
                 <h1>Performance</h1>
-                <p><b>Disclaimer:</b> Performance is the category That I have spend the least amount of time exploring.</p>
+                <p><b>Disclaimer:</b> Performance is the category that I have spent the least amount of time exploring.</p>
                 <h2>Framerate and Loading</h2>
-                <p>Performance is tough to judge here, unfortunately. Model-Viewer is built on the three.js library. As a result, Model-Viewer offers a comparable experience in terms of both fps and load times when compared to three.js in its raw form. Again,
-                    it is hard to measure this besides in a purely visual manner.</p>
-                <p>It goes without saying, more powerful and modern machines will have a distinct advantage when viewing any 3D model on the web. They are capable of a much (much) smoother experience in terms of loading and especially Frames-per-second (FPS)
-                    counts. My gaming desktop for example, has no problems rendering these models, even in copious quantities. Over 150 models rendered on a single page at a time, and my desktop did not even flinch. Not even when throttling the CPU by
-                    6x in Google Chrome.</p>
-                <p>Interestingly, throttling the CPU had virutally no impact. What did have an impact however, was disabling <i>hardware acceleration</i> in my browser. HW Acceleration allows for an application to access special HW present in the machine
+                <p>Performance is tough to judge here, unfortunately. Model-Viewer is built on the three.js library. As a result, it offers a comparable experience in terms of both frames-per-second (FPS) and load times when compared to three.js in its raw
+                    form. Again, it is hard to measure this besides in a purely visual manner.</p>
+                <h3>Comparison Between three.js and Model-Viewer</h3>
+                <p><a href="tjs.html" class="button navButton nowrap">three.js</a> VS. <a href="mv.html" class="button navButton nowrap">Model-Viewer</a></p>
+                <p>It goes without saying, more powerful and modern machines will have a distinct advantage when viewing any 3D model on the web. They are capable of a much (much) smoother experience in terms of loading and especially FPS counts. My gaming
+                    desktop for example, has no problems rendering these models, even in copious quantities. Over 150 models rendered on a single page at a time, and my desktop did not even flinch. Not even when throttling the CPU by 6x in Google Chrome.</p>
+                <p>Interestingly, throttling the CPU had virutally no impact. What did have an impact however, was disabling <i>hardware (HW) acceleration</i> in my browser. HW Acceleration allows for an application to access special HW present in the machine
                     in order to better perform a task. In this case, by disabling HW acceleration in Chrome I took away the browsers ability to access my Graphics Card (GPU), and my FPS counts plummeted (but were still perfectly acceptable) as a result.
                     This shows without a doubt that Model-Viewer (and by extension three.js) render models on the GPU where applicable. This explains why CPU throttling had no impact.</p>
                 <p>As a true test, I subjected this demo site to the two slowest devices that I could think of. The first was my Surface Pro 3. This site runs fine on that device, load times and FPS are both acceptable, and despite the slow nature of the
                     device, it performed fine when running Model-Viewer.</p>
                 <p>The slowest device I own is my Samsung Galaxy Note 5 (2015) smartphone. Unfortunately, performance here suffered. While the models were still interactable, FPS and load times were noticably slower.</p>
                 <p>A Samsung Galaxy S7, a Phone from 2016 was able to render the models easily on this demo site. I am not certain what the issue is with my phone, but other devices seem to have perfectly acceptable performance.</p>
-                <p>With more time dedicated to performance, I would certainly like to explore the performance on 3D modeling on the web in greater detail.</p>
             </div>
             <div class="model-container">
                 <model-viewer id="testKnife2" src="models/StonePipe/stone-pipe.gltf" interaction-prompt="auto" camera-controls auto-rotate interaction-prompt="none" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
@@ -72,16 +72,17 @@
                 </script>
             </div>
             <div class="text-container">
-                <h1>Compatability</h1>
+                <h1>Compatibility</h1>
                 <p>Model-Viewer has great browser support accross the board. In cases where a feature is not supported natively, it can be made compatible by including a <i>polyfill.</i></p>
-                <p>In programming and web-development, a <b>polyfill</b> is code that implements a feature on a browser that does not natively support that feature. Polyfills can typically be included to a site with very negligible overhead. </p>
+                <p>In web-development, a <b>polyfill</b> is code that implements a feature on a browser that does not natively support that feature. Polyfills can typically be included to a site with very negligible overhead. </p>
                 <p>In addition to enabling older browsers to support Model-Viewer, polyfills can also be included to optimize performance, and ensure that all of Model-Viewers features are supported.</p>
                 <h2>Browsers and Support</h2>
                 <p>As of now, I have done some testing on Chrome, MS Edge, and Firefox.</p>
-                <p>Performance is best on Chrome. MS Edge has similar FPS and load times. Unfortunately, when loading models on edge, a strange blue circle covers the model while it loads. </p>
+                <p>Performance is best on Chrome. MS Edge has similar FPS and load times. Unfortunately, when loading models on Edge, a strange blue circle covers the model while it loads. </p>
                 <p>Firefox has regular load times, but FPS counts are noticably lower here, even with HW acceleration enabled. CPU usage is also extremely high for some reason. This problem is also present on the official model-viewer site, and seems to
-                    affect three.js models (to a lesser extent).</p>
-                <p>Internet Explorer Does not seem to run model-viewer for some reason, even though it is supposed to. IE11 does not even seem to support CSS grid, so no surprise there.</p>
+                    affect three.js models as well, albeit to a lesser extent.</p>
+                <p>Internet Explorer does not seem to run model-viewer for some reason, even though it is supposed to. IE11 does not even seem to support CSS grid, so no surprise there.</p>
+                <p>As far as Safari, I was unable to do testing here, as I do not own an Apple device and Safari is no longer supported on Windows. The latest Windows release of Safari was version 5.1.7, and Safari is currently at version 13.</p>
                 <h2>Apple iOS and Magic-Leap</h2>
                 <p>Another note-worthy thing is that for AR functionality on iOS and Magic Leap, some additional steps must be taken (typical Apple...).</p>
                 <p>For iOS, the <i>ios-src</i> attribute needs to be defined which links to a DSDZ model for AR on Safari.</p>

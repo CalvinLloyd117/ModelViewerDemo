@@ -37,7 +37,8 @@
                 <h1>What is Model-Viewer?</h1>
                 <p>Model-Viewer is a light-weight 3D modeling framework built on the three.js suite. This framework takes alot of the backend workload out of the equation, allowing for self-contained models which do not require the same care and meticulous
                     hassle that comes from using three.js.</p>
-                <p>What took me nearly 100 lines of code in three.js to render a simple knife, can be done with ease in Model-Viewer. It is literally as easy as including the model-viewer tag and the src of a .gltf model in order to achieve basic functionality.
+                <p>What took me nearly 100 lines of code in three.js to render a simple knife, can be done with ease in Model-Viewer. It is literally as easy as including the model-viewer tag and the src of a .gltf, or .glb model in order to achieve basic
+                    functionality.
                 </p>
                 <p>Practically every 3D modelling functionality that I think we could ever need from three.js is already included in Model-Viewer, but without the need for hard coding a back-end platform. </p>
                 <p>All of Model-Viewer's functionality and features are sure to improve in the future. This web component is still in development, and during my time exploring it, there have been many improvements that I was able to witness firsthand and
@@ -56,7 +57,7 @@
                 <p><b>Interaction Policies</b> can be set which prevent accidentally zooming into a model rather than scroll down the webpage. So long as the model is not in focus, accidental interaction can be avoided.</p>
             </div>
             <div class="model-container">
-                <model-viewer id="testKnife2" src="models/StonePipe/stone-pipe.gltf" interaction-prompt="auto" camera-controls auto-rotate interaction-prompt="none" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
+                <model-viewer id="testKnife2" src="models/Knife/knife.glb" interaction-prompt="auto" camera-controls auto-rotate interaction-prompt="none" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
                 </model-viewer>
                 <script>
                     (() => {
@@ -79,8 +80,8 @@
             <div class="text-container">
                 <h1>Dynamic Models</h1>
                 <p>Models can be changed dynamically, using some basic Javascript/jQuery.</p>
-                <input type="radio" id="knife" name="model" value="knife" checked> <label for="knife">Pouch</label><br>
-                <input type="radio" id="sheath" name="model" value="sheath"> <label for="running">Red-Pipe</label><br>
+                <input type="radio" id="knife" name="model" value="knife" checked> <label for="knife">Sheath</label><br>
+                <input type="radio" id="sheath" name="model" value="sheath"> <label for="running">Moccasins</label><br>
 
                 <h1>Model Exposure</h1>
                 <p>Model-Viewer includes an exposure tag, which changes the "lighting" of the object. This tag accepts a value from 0-1 and can be used to fix certain washed out models.</p>
@@ -102,16 +103,16 @@
                 <p>A complete list of Model-Viewer attributes can be found <a href="https://modelviewer.dev/" target="_blank">here</a>.</p>
             </div>
             <div class="model-container">
-                <model-viewer id="testKnife" class="default" src="./models/Pouch/pouch.gltf" auto-rotate autoplay camera-controls shadow-intensity="3" exposure="1" shadow-softness="0.9" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
+                <model-viewer id="testKnife" class="default" src="./models/Sheath/sheath.gltf" auto-rotate autoplay camera-controls shadow-intensity="3" exposure="1" shadow-softness="0.9" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
                 </model-viewer>
                 <script>
                     (() => {
                         const modelViewer = document.querySelector('#testKnife');
                         $('#knife').click(function() {
-                            $('#testKnife').attr('src', './models/Pouch/pouch.gltf')
+                            $('#testKnife').attr('src', './models/Sheath/sheath.gltf')
                         });
                         $('#sheath').click(function() {
-                            $('#testKnife').attr('src', './models/RedPipe/red-pipe.gltf')
+                            $('#testKnife').attr('src', './models/Moccasins/moccasins.glb')
                         });
                         $('#LIntensity').click(function() {
                             $('#testKnife').attr('shadow-intensity', '3')
@@ -136,11 +137,11 @@
             </div>
             <div class="grid-models">
                 <div class="model-container">
-                    <model-viewer class="default" src="./models/Pipe/pipe.gltf" auto-rotate camera-controls shadow-intensity="5" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
+                    <model-viewer class="default" src="./models/Knife/knife.glb" auto-rotate camera-controls shadow-intensity="5" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
                     </model-viewer>
                 </div>
                 <div class="model-container">
-                    <model-viewer class="default" src="./models/RedPipe/red-pipe.gltf" auto-rotate camera-controls shadow-intensity="5" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
+                    <model-viewer class="default" src="./models/Moccasins/moccasins.glb" auto-rotate camera-controls shadow-intensity="5" interaction-policy="allow-when-focused" alt="A 3D model of a Blackfoot Knife">
                     </model-viewer>
                 </div>
                 <div class="model-container">
